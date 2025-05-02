@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blood Donation Sign Up Form</title>
+</head>
+<style>
+    body{
+        font-family: Arial, Helvetica, sans-serif;
+        background: #f0f0f0;
+        padding: 20px;
+    }
+    .form-container{
+        max-width: 600px;
+        margin: auto;
+        background: white;
+        padding: 30px;
+        border-radius: 10px;
+        box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    }
+    .form-header{
+        background-color: #c0392b;
+        color: #f0f0f0;
+        text-align: center;
+        padding: 20px;
+        border-radius: 10px 10px 0 0;
+    }
+    form{
+        margin-top: 20px;
+    }
+
+    label {
+        display: block;
+        margin-top: 15px;
+        font-weight: bold;
+    }
+
+    input[type=text],
+    input[type=email],
+    input[type=tel],
+    input[type=date],
+    Select {
+        width: 50%;
+        padding: 10px;
+        margin-top: 10px;
+        border-radius: 10px;
+        border: 1px solid #ccc;
+    }
+    .radio-group, .checkbox-group {
+        margin-top: 10px;
+        display: flex;
+        flex-wrap: wrap;
+        gap: 20px;
+    }
+    .checkbox-group {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+    }
+    .submit-btn{
+        background-color:black;
+        color: white;
+        padding: 12px 24px;
+        margin-top:30px;
+        border: none;
+        border-radius: 5px;
+        font-size: 16px;
+        cursor: pointer;
+
+    }
+    .submit-btn:hover{
+        background-color: #444;
+    }
+    .message-btn:hover{
+        margin-top: 15px;
+        font-weight: bold;
+    }
+
+</style>
+<body>
+    <div class="form-container">
+        <div class="form-header">
+            <img src="blood doantion.png" alt="">
+            <h2>Blood Donation Form</h2>
+            <p>Please answer honestly</p>
+        </div>
+
+        <form id="donationForm">
+
+            <label>What is your Blood Type?</label>
+            <div class="radio-group">
+                <label><input type="radio" name="bloodtype"value="A+">A+</label>
+                <label><input type="radio" name="bloodtype"value="A-">A-</label>
+                <label><input type="radio" name="bloodtype"value="B+">B+</label>
+                <label><input type="radio" name="bloodtype"value="B-">B-</label>
+                <label><input type="radio" name="bloodtype"value="AB+">AB+</label>
+                <label><input type="radio" name="bloodtype"value="AB-">AB-</label>
+                <label><input type="radio" name="bloodtype"value="O+">O+</label>
+                <label><input type="radio" name="bloodtype"value="O-">O-</label>
+            </div>
+
+            <label>Full Name</label>
+            <div class="row">
+                <div><input type="text" placeholder="First Name" required></div>
+                <div><input type="text" placeholder="Last Name" required></div>
+            </div>
+
+            <label>Birth Date</label>
+            <div class="row">
+                <div><input type="date">
+</div>
+                    <label>Gender</label>
+                    <div class="radio-group">
+                        <label><input type="radio" name="Gender"value="Male">Male</label>
+                        <label><input type="radio" name="Gender"value="Female">Female</label>
+                </div>
+
+                <label>Occupation</label>
+                <input type="text" placeholder="Occupation" required>
+
+                <label>Phone Number</label>
+                <input type="tel" placeholder="Phone Number" required>
+
+                <label>Email</label>
+                <input type="email" placeholder="email@example.com" required>
+
+                <label>Address</label>
+                <input type="text" placeholder="Street Address" required>
+
+                <div class="row">
+                    <div><input type="text" placeholder="City"></div>
+                    <div><input type="text" placeholder="State/Province"></div>      
+                </div>
+                <div><input type="text" placeholder="Postal / Zip Code"></div>
+
+                <div class="row">
+                    <div><label>Pulse</label><input type="text"></div>
+                </div>
+                <div class="row">
+                    <div><label>Bp</label><input type="text"></div>
+                </div>
+
+                <label>Temperature</label>
+                <input type="text">
+
+                <label>When was the last time you donated blood?</label>
+                <input type="date">
+
+                <label>Hve you donated previously?</label>
+                <div class="radio-group">
+                    <label><input type="radio" name="donatedBefore" value="Yes">Yes</label>
+                    <label><input type="radio" name="donatedBefore" value="No">No</label>
+                </div>
+
+                <label>In the last 6 months have you had any of the following?</label>
+                
+
+                <button class="submit-btn" type="submit">Submit</button>
+                <div class="message" id="formMessage"></div>
+            </form>
+
+            </label>
+        </form>
+</body>
+</html>
+<script>
+    document.getElementById("donationForm").addEventListener("submit", function(e){
+
+  
+        e.preventDefault();
+    
+    document.getElementById("formMessage") .textContent= "Thank you for submitting your Form!";
+
+ document.getElementById("formMessage") .style.color="green";
+ this.reset();
+    });
+</script>
